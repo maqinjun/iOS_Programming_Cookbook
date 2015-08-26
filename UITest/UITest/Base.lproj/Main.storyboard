@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cjL-vK-Vnk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cjL-vK-Vnk">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -75,20 +75,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="MainOPTalbeViewCell" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" editingAccessoryType="detailDisclosureButton" textLabel="Tb1-0h-8Nq" style="IBUITableViewCellStyleDefault" id="kfP-i2-Szg">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="MainOPTalbeViewCell" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MainOPTalbeViewCell" editingAccessoryType="detailDisclosureButton" id="kfP-i2-Szg" customClass="MainOPTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kfP-i2-Szg" id="iAa-Jr-NEZ">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tb1-0h-8Nq">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtQ-12-jcJ">
+                                            <rect key="frame" x="8" y="8" width="271" height="27"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="HtQ-12-jcJ" secondAttribute="bottom" constant="8" id="8Ow-Mw-LOZ"/>
+                                        <constraint firstItem="HtQ-12-jcJ" firstAttribute="leading" secondItem="iAa-Jr-NEZ" secondAttribute="leading" constant="8" id="FWg-Do-3dr"/>
+                                        <constraint firstItem="HtQ-12-jcJ" firstAttribute="top" secondItem="iAa-Jr-NEZ" secondAttribute="top" constant="8" id="X4V-aF-AYW"/>
+                                        <constraint firstAttribute="trailing" secondItem="HtQ-12-jcJ" secondAttribute="trailing" constant="8" id="jXJ-Qh-lXr"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="tintColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="label" destination="HtQ-12-jcJ" id="WJ2-Ng-KDC"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

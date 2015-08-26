@@ -16,6 +16,8 @@
 #import "MultipleDynamicViewController.h"
 #import "DynamicSnapEffectViewController.h"
 #import "AssigningCharacteristicViewController.h"
+#import "MainOPTableViewCell.h"
+//#import "TestTableViewCell.h"
 
 #import "CoreDataViewController.h"
 
@@ -28,6 +30,8 @@
 #import <AVFoundation/AVFoundation.h>
 
 @interface MainOPTableViewController ()<UITableViewDataSource, UITableViewDelegate>
+
+@property (strong, nonatomic) MainOPTableViewCell *heightCell;
 
 @end
 
@@ -120,7 +124,8 @@ NSString *cellIdentifier = @"MainOPTalbeViewCell";
     
     cellClicked = NO;
 
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellIdentifier];
+//    [self.tableView registerClass:[MainOPTableViewCell class] forCellReuseIdentifier:cellIdentifier];
+//    [self.tableView registerNib:[UINib nibWithNibName:@"TestTableViewCell" bundle:nil] forCellReuseIdentifier:cellIdentifier];
 //    self.tableView.editing = YES;
     self.navigationItem.title = @"Index";
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
@@ -274,12 +279,31 @@ NSString *cellIdentifier = @"MainOPTalbeViewCell";
     return dataSectionTitles[section];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (!_heightCell) {
+        _heightCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    }
+    
+    NSArray *sectionCellData = dataCell[indexPath.section];
+
+    _heightCell.label.text = sectionCellData[indexPath.row];
+//    _heightCell.label.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width - 10;
+
+    CGSize size = [_heightCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    
+    NSLog(@"%s %f %@", __FUNCTION__, size.height+1, sectionCellData[indexPath.row]);
+    
+    return size.height + 1;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    MainOPTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     NSArray *sectionCellData = dataCell[indexPath.section];
     
     cell.accessoryType = UITableViewCellAccessoryDetailButton;
-    cell.textLabel.text = sectionCellData[indexPath.row];
+    cell.label.text = sectionCellData[indexPath.row];
+//    cell.textLabel.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width - 10;
     cell.accessibilityElementsHidden = YES;
     cell.accessibilityViewIsModal = YES;
     return cell;

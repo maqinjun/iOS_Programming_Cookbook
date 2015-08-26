@@ -14,6 +14,9 @@
 		C825CC321B554091007E4F13 /* AddPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C825CC311B554091007E4F13 /* AddPersonViewController.m */; };
 		C825CC351B554619007E4F13 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C825CC341B554619007E4F13 /* TableViewCell.m */; };
 		C853FF231B53A29D008CF497 /* CoreData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C853FF221B53A29D008CF497 /* CoreData.storyboard */; };
+		C85748A51B8D8A3500DDC0F6 /* MainOPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C85748A41B8D8A3500DDC0F6 /* MainOPTableViewCell.m */; };
+		C85748A91B8D8F6C00DDC0F6 /* TestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C85748A71B8D8F6C00DDC0F6 /* TestTableViewCell.m */; };
+		C85748AA1B8D8F6C00DDC0F6 /* TestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C85748A81B8D8F6C00DDC0F6 /* TestTableViewCell.xib */; };
 		C86C7A661B4E2A4B00810A58 /* AdressBook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86C7A651B4E2A4B00810A58 /* AdressBook.storyboard */; };
 		C86C7A691B4E2A8B00810A58 /* AdressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C86C7A681B4E2A8B00810A58 /* AdressBookViewController.m */; };
 		C86C7A831B4E7BD400810A58 /* CameraPhoto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86C7A821B4E7BD400810A58 /* CameraPhoto.storyboard */; };
@@ -96,6 +99,11 @@
 		C825CC331B554619007E4F13 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		C825CC341B554619007E4F13 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		C853FF221B53A29D008CF497 /* CoreData.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CoreData.storyboard; sourceTree = "<group>"; };
+		C85748A31B8D8A3500DDC0F6 /* MainOPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainOPTableViewCell.h; sourceTree = "<group>"; };
+		C85748A41B8D8A3500DDC0F6 /* MainOPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainOPTableViewCell.m; sourceTree = "<group>"; };
+		C85748A61B8D8F6C00DDC0F6 /* TestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewCell.h; sourceTree = "<group>"; };
+		C85748A71B8D8F6C00DDC0F6 /* TestTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewCell.m; sourceTree = "<group>"; };
+		C85748A81B8D8F6C00DDC0F6 /* TestTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestTableViewCell.xib; sourceTree = "<group>"; };
 		C86C7A651B4E2A4B00810A58 /* AdressBook.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AdressBook.storyboard; sourceTree = "<group>"; };
 		C86C7A671B4E2A8B00810A58 /* AdressBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdressBookViewController.h; sourceTree = "<group>"; };
 		C86C7A681B4E2A8B00810A58 /* AdressBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdressBookViewController.m; sourceTree = "<group>"; };
@@ -370,6 +378,11 @@
 				C8E965D91B35BAE30042F818 /* MainOPTableViewController.m */,
 				C80F58DA1B3C6B6400A89349 /* test.storyboard */,
 				C80F58DC1B3C6B6F00A89349 /* test1.storyboard */,
+				C85748A31B8D8A3500DDC0F6 /* MainOPTableViewCell.h */,
+				C85748A41B8D8A3500DDC0F6 /* MainOPTableViewCell.m */,
+				C85748A61B8D8F6C00DDC0F6 /* TestTableViewCell.h */,
+				C85748A71B8D8F6C00DDC0F6 /* TestTableViewCell.m */,
+				C85748A81B8D8F6C00DDC0F6 /* TestTableViewCell.xib */,
 			);
 			path = UITest;
 			sourceTree = "<group>";
@@ -598,6 +611,7 @@
 				C8D61AAD1ADCBCAD0098F389 /* Main.storyboard in Resources */,
 				C8D77D2F1B57B84D00155925 /* CoreMotion.storyboard in Resources */,
 				C86C7A661B4E2A4B00810A58 /* AdressBook.storyboard in Resources */,
+				C85748AA1B8D8F6C00DDC0F6 /* TestTableViewCell.xib in Resources */,
 				C8BCA5A11B56BB9500B55110 /* GraphicsAnimations.storyboard in Resources */,
 				C80F58DD1B3C6B6F00A89349 /* test1.storyboard in Resources */,
 				C86C7A831B4E7BD400810A58 /* CameraPhoto.storyboard in Resources */,
@@ -633,6 +647,7 @@
 				C8E9657A1B3561FA0042F818 /* KeychainItemWrapper.m in Sources */,
 				C874D1561B4D0F57007D325B /* MapsViewController.m in Sources */,
 				C8F3CBFE1B55643D00048E79 /* Employee.m in Sources */,
+				C85748A91B8D8F6C00DDC0F6 /* TestTableViewCell.m in Sources */,
 				C8D61AAA1ADCBCAD0098F389 /* ViewController.m in Sources */,
 				C8EF07441B520BCC00AC7A2A /* Model.xcdatamodeld in Sources */,
 				C8D61AA71ADCBCAD0098F389 /* AppDelegate.m in Sources */,
@@ -666,6 +681,7 @@
 				C8F3CC011B55643E00048E79 /* Manager.m in Sources */,
 				C8B39C741B5CC5CA00267220 /* MyUICollectionViewLayout.m in Sources */,
 				C825CC321B554091007E4F13 /* AddPersonViewController.m in Sources */,
+				C85748A51B8D8A3500DDC0F6 /* MainOPTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
