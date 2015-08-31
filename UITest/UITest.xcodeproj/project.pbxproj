@@ -13,6 +13,7 @@
 		C80F58DD1B3C6B6F00A89349 /* test1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C80F58DC1B3C6B6F00A89349 /* test1.storyboard */; };
 		C825CC321B554091007E4F13 /* AddPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C825CC311B554091007E4F13 /* AddPersonViewController.m */; };
 		C825CC351B554619007E4F13 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C825CC341B554619007E4F13 /* TableViewCell.m */; };
+		C82DD3DE1B900B3600F2CF90 /* PreSoraka_v1.0_Beta0825.ipa in Resources */ = {isa = PBXBuildFile; fileRef = C82DD3DD1B900B3600F2CF90 /* PreSoraka_v1.0_Beta0825.ipa */; };
 		C853FF231B53A29D008CF497 /* CoreData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C853FF221B53A29D008CF497 /* CoreData.storyboard */; };
 		C85748A51B8D8A3500DDC0F6 /* MainOPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C85748A41B8D8A3500DDC0F6 /* MainOPTableViewCell.m */; };
 		C85748A91B8D8F6C00DDC0F6 /* TestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C85748A71B8D8F6C00DDC0F6 /* TestTableViewCell.m */; };
@@ -98,6 +99,7 @@
 		C825CC311B554091007E4F13 /* AddPersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPersonViewController.m; sourceTree = "<group>"; };
 		C825CC331B554619007E4F13 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		C825CC341B554619007E4F13 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		C82DD3DD1B900B3600F2CF90 /* PreSoraka_v1.0_Beta0825.ipa */ = {isa = PBXFileReference; lastKnownFileType = file; name = PreSoraka_v1.0_Beta0825.ipa; path = UITest/PreSoraka_v1.0_Beta0825.ipa; sourceTree = "<group>"; };
 		C853FF221B53A29D008CF497 /* CoreData.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CoreData.storyboard; sourceTree = "<group>"; };
 		C85748A31B8D8A3500DDC0F6 /* MainOPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainOPTableViewCell.h; sourceTree = "<group>"; };
 		C85748A41B8D8A3500DDC0F6 /* MainOPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainOPTableViewCell.m; sourceTree = "<group>"; };
@@ -244,6 +246,15 @@
 			name = AutoLayoutVisualFormatLanguage;
 			sourceTree = "<group>";
 		};
+		C82DD3DC1B900A2F00F2CF90 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C82DD3DD1B900B3600F2CF90 /* PreSoraka_v1.0_Beta0825.ipa */,
+				C8EF07331B51817400AC7A2A /* test.mp3 */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		C86C7A641B4E2A2C00810A58 /* AdressBook */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,9 +338,9 @@
 		C8D61A951ADCBCAD0098F389 = {
 			isa = PBXGroup;
 			children = (
+				C82DD3DC1B900A2F00F2CF90 /* Assets */,
 				C8EF07421B520BCC00AC7A2A /* Model.xcdatamodeld */,
 				C8EF07371B52068400AC7A2A /* Frameworks */,
-				C8EF07331B51817400AC7A2A /* test.mp3 */,
 				C8D61AA01ADCBCAD0098F389 /* UITest */,
 				C8D61ABA1ADCBCAD0098F389 /* UITestTests */,
 				C8D61A9F1ADCBCAD0098F389 /* Products */,
@@ -617,6 +628,7 @@
 				C86C7A831B4E7BD400810A58 /* CameraPhoto.storyboard in Resources */,
 				C8D61AB21ADCBCAD0098F389 /* LaunchScreen.xib in Resources */,
 				C853FF231B53A29D008CF497 /* CoreData.storyboard in Resources */,
+				C82DD3DE1B900B3600F2CF90 /* PreSoraka_v1.0_Beta0825.ipa in Resources */,
 				C8EF07341B51817400AC7A2A /* test.mp3 in Resources */,
 				C89A18A21B4D732300B7AA79 /* GestureRecognizer.storyboard in Resources */,
 				C8EF06C01B50EFDD00AC7A2A /* Multitasking.storyboard in Resources */,

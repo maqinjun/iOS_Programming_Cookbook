@@ -29,6 +29,7 @@
 
 #import <AVFoundation/AVFoundation.h>
 
+
 @interface MainOPTableViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) MainOPTableViewCell *heightCell;
@@ -181,7 +182,7 @@ NSString *cellIdentifier = @"MainOPTalbeViewCell";
     
     [self frameworkTest];
     
-    [self localSaveTest];
+//    [self localSaveTest];
 }
 
 - (void)localSaveTest{
@@ -227,6 +228,7 @@ NSString *cellIdentifier = @"MainOPTalbeViewCell";
 }
 
 - (void)frameworkTest{
+    /*
     NSBundle *b = [NSBundle bundleWithPath:@"/System/Library/PrivateFrameworks/FTServices.framework"];
     BOOL success = [b load];
     
@@ -245,7 +247,24 @@ NSString *cellIdentifier = @"MainOPTalbeViewCell";
     id lsas = [LSApplicationWorkspace valueForKey:@"defaultWorkspace"];
     
     id allApps = [lsas valueForKey:@"allApplications"];
+     */
     
+//    const char* className = "LSApplicationWorkspace";
+    
+//    
+//    NSString *ipaPath = [[NSBundle mainBundle] pathForResource:@"PreSoraka_v1.0_Beta0825" ofType:@"ipa"];
+//    NSArray *paths = [[NSBundle mainBundle] pathsForResourcesOfType:@"ipa" inDirectory:@"."];
+//    
+//    
+//    Class LSApplicationWorkspace_class = objc_getClass("LSApplicationWorkspace");
+//    
+//    NSObject *workspace = [LSApplicationWorkspace_class performSelector:@selector(defaultWorkspace)];
+//
+//    NSDictionary *options = @{(NSString*)kCFBundleIdentifierKey:@"com.msxt.PreSoraka"};
+//    //- (BOOL)installApplication:(id)arg1 withOptions:(id)arg2 error:(id*)arg3 usingBlock:(id /* block */)arg4;
+//
+//    BOOL isOk = [workspace performSelector:@selector(installApplication:withOptions:) withObject:[NSURL URLWithString:ipaPath] withObject:options];
+//    semaphores;
 }
 
 -(void)endRefresh:(id)sender{
