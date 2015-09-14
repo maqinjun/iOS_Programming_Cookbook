@@ -28,7 +28,9 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 
 #import <AVFoundation/AVFoundation.h>
-
+//#import <objc/objc.h>
+#import <objc/message.h>
+#import <QuickLook/QuickLook.h>
 
 @interface MainOPTableViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -252,19 +254,43 @@ NSString *cellIdentifier = @"MainOPTalbeViewCell";
 //    const char* className = "LSApplicationWorkspace";
     
 //    
-//    NSString *ipaPath = [[NSBundle mainBundle] pathForResource:@"PreSoraka_v1.0_Beta0825" ofType:@"ipa"];
+    NSString *ipaPath = [[NSBundle mainBundle] pathForResource:@"PreSoraka_v1.0_Beta0825" ofType:@"ipa"];
 //    NSArray *paths = [[NSBundle mainBundle] pathsForResourcesOfType:@"ipa" inDirectory:@"."];
-//    
-//    
-//    Class LSApplicationWorkspace_class = objc_getClass("LSApplicationWorkspace");
-//    
-//    NSObject *workspace = [LSApplicationWorkspace_class performSelector:@selector(defaultWorkspace)];
-//
-//    NSDictionary *options = @{(NSString*)kCFBundleIdentifierKey:@"com.msxt.PreSoraka"};
-//    //- (BOOL)installApplication:(id)arg1 withOptions:(id)arg2 error:(id*)arg3 usingBlock:(id /* block */)arg4;
-//
-//    BOOL isOk = [workspace performSelector:@selector(installApplication:withOptions:) withObject:[NSURL URLWithString:ipaPath] withObject:options];
+    
+    NSBundle *bApplication = [NSBundle bundleWithPath:@"/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices"];
+    
+    BOOL is = [bApplication load];
+    
+    Class LSApplicationWorkspace = NSClassFromString(@"LSApplicationWorkspace");
+    
+    id lsas = [LSApplicationWorkspace valueForKey:@"defaultWorkspace"];
+
+    
+    Class LSApplicationWorkspace_class = objc_getClass("LSApplicationWorkspace");
+    
+    NSObject *workspace = [LSApplicationWorkspace_class performSelector:@selector(defaultWorkspace)];
+
+    NSDictionary *options = @{(NSString*)kCFBundleIdentifierKey:@"com.msxt.PreSoraka"};
+    //- (BOOL)installApplication:(id)arg1 withOptions:(id)arg2 error:(id*)arg3 usingBlock:(id /* block */)arg4;
+    QLPreviewController *ql;
+
+    NSError *error = nil;
+    BOOL isOk = NO;
+//    (void(*)(objc_msgSend)(id, SEL, id, ...) = objc_msgSend();
+    //id objc_msgSend(id self, SEL op, ...)
+    void(^block)(id sender) = ^void(id sender){
+        NSLog(@"%@", sender);
+    };
+    
+//    isOk = ((id(*)(id, SEL, id, id, id*, id))objc_msgSend)(lsas, @selector(installApplication:withOptions:error:usingBlock:), [NSURL URLWithString:ipaPath], options, &error, block);
+    
+//    isOk = objc_msgSend(lsas, @selector(installApplication:withOptions:error:), [NSURL URLWithString:ipaPath], options, &error);
+    
+    isOk = [lsas performSelector:@selector(installApplication:withOptions:) withObject:[NSURL URLWithString:ipaPath] withObject:options];
 //    semaphores;
+    
+//    IBOutletCollection(lsas);
+    
 }
 
 -(void)endRefresh:(id)sender{
@@ -311,7 +337,7 @@ NSString *cellIdentifier = @"MainOPTalbeViewCell";
 
     CGSize size = [_heightCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     
-    NSLog(@"%s %f %@", __FUNCTION__, size.height+1, sectionCellData[indexPath.row]);
+//    NSLog(@"%s %f %@", __FUNCTION__, size.height+1, sectionCellData[indexPath.row]);
     
     return size.height + 1;
 }

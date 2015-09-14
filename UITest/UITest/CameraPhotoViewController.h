@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CameraPhotoViewController : UIViewController
-
+@property (nonatomic, strong) IBOutletCollection(UILabel) NSArray *labels;
 @end

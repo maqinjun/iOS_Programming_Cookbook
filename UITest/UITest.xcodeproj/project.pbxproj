@@ -25,6 +25,7 @@
 		C873AC2D1B4D1B7F00EB9254 /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C873AC2C1B4D1B7F00EB9254 /* MyAnnotation.m */; };
 		C874D1531B4D0A14007D325B /* maps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C874D1521B4D0A14007D325B /* maps.storyboard */; };
 		C874D1561B4D0F57007D325B /* MapsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C874D1551B4D0F57007D325B /* MapsViewController.m */; };
+		C87C51921B988DA300A7F765 /* MyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C87C51911B988DA300A7F765 /* MyTest.m */; };
 		C89A18A21B4D732300B7AA79 /* GestureRecognizer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C89A18A11B4D732300B7AA79 /* GestureRecognizer.storyboard */; };
 		C89A18A51B4D738E00B7AA79 /* GestureRecognizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C89A18A41B4D738E00B7AA79 /* GestureRecognizerViewController.m */; };
 		C8B39C741B5CC5CA00267220 /* MyUICollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B39C731B5CC5CA00267220 /* MyUICollectionViewLayout.m */; };
@@ -120,6 +121,9 @@
 		C874D1521B4D0A14007D325B /* maps.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = maps.storyboard; sourceTree = "<group>"; };
 		C874D1541B4D0F57007D325B /* MapsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapsViewController.h; sourceTree = "<group>"; };
 		C874D1551B4D0F57007D325B /* MapsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapsViewController.m; sourceTree = "<group>"; };
+		C87C51891B988B1C00A7F765 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C87C518A1B988B1C00A7F765 /* UITest_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITest_Tests.m; sourceTree = "<group>"; };
+		C87C51911B988DA300A7F765 /* MyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTest.m; sourceTree = "<group>"; };
 		C89A18A11B4D732300B7AA79 /* GestureRecognizer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GestureRecognizer.storyboard; sourceTree = "<group>"; };
 		C89A18A31B4D738E00B7AA79 /* GestureRecognizerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureRecognizerViewController.h; sourceTree = "<group>"; };
 		C89A18A41B4D738E00B7AA79 /* GestureRecognizerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureRecognizerViewController.m; sourceTree = "<group>"; };
@@ -287,6 +291,23 @@
 			name = CoreLocationMaps;
 			sourceTree = "<group>";
 		};
+		C87C51871B988B1C00A7F765 /* UITest Tests */ = {
+			isa = PBXGroup;
+			children = (
+				C87C518A1B988B1C00A7F765 /* UITest_Tests.m */,
+				C87C51881B988B1C00A7F765 /* Supporting Files */,
+			);
+			path = "UITest Tests";
+			sourceTree = "<group>";
+		};
+		C87C51881B988B1C00A7F765 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C87C51891B988B1C00A7F765 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		C89A18A01B4D728F00B7AA79 /* ImplementingGestureRecognizer */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +361,7 @@
 			children = (
 				C82DD3DC1B900A2F00F2CF90 /* Assets */,
 				C8EF07421B520BCC00AC7A2A /* Model.xcdatamodeld */,
+				C87C51871B988B1C00A7F765 /* UITest Tests */,
 				C8EF07371B52068400AC7A2A /* Frameworks */,
 				C8D61AA01ADCBCAD0098F389 /* UITest */,
 				C8D61ABA1ADCBCAD0098F389 /* UITestTests */,
@@ -412,6 +434,7 @@
 			children = (
 				C8D61ABD1ADCBCAD0098F389 /* UITestTests.m */,
 				C8D61ABB1ADCBCAD0098F389 /* Supporting Files */,
+				C87C51911B988DA300A7F765 /* MyTest.m */,
 			);
 			path = UITestTests;
 			sourceTree = "<group>";
@@ -702,6 +725,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8D61ABE1ADCBCAD0098F389 /* UITestTests.m in Sources */,
+				C87C51921B988DA300A7F765 /* MyTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -820,13 +844,14 @@
 				CODE_SIGN_ENTITLEMENTS = UITest/UITest.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UITest",
 				);
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/UITest/UITest-Prefix.pch";
 				INFOPLIST_FILE = UITest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -840,13 +865,14 @@
 				CODE_SIGN_ENTITLEMENTS = UITest/UITest.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/UITest",
 				);
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/UITest/UITest-Prefix.pch";
 				INFOPLIST_FILE = UITest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -857,6 +883,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -876,6 +903,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

@@ -25,6 +25,8 @@ UIActionSheetDelegate>
                                               initWithBarButtonSystemItem:UIBarButtonSystemItemCamera
                                               target:self
                                               action:@selector(takePicture:)];
+    
+    self.labels;
 }
 
 - (BOOL)isCameraAvailable{
