@@ -25,8 +25,14 @@ NSString *const kIdentifier = @"bootomBounday";
 -(void)viewDidLoad{
     self.view.backgroundColor = [UIColor whiteColor];
     
-    barStart = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(start:)];
-    barUndo = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemUndo target:self action:@selector(undo:)];
+    barStart = [[UIBarButtonItem alloc]
+                initWithBarButtonSystemItem:UIBarButtonSystemItemPlay
+                target:self
+                action:@selector(start:)];
+    barUndo = [[UIBarButtonItem alloc]
+               initWithBarButtonSystemItem:UIBarButtonSystemItemUndo
+               target:self
+               action:@selector(undo:)];
     barUndo.enabled = NO;
     self.disapearSwitch = [[UISwitch alloc] init];
     
@@ -42,7 +48,10 @@ NSString *const kIdentifier = @"bootomBounday";
     
     int colume = 3;
     
-    NSArray *colors = @[[UIColor redColor], [UIColor greenColor], [UIColor grayColor], [UIColor blueColor]];
+    NSArray *colors = @[[UIColor redColor],
+                        [UIColor greenColor],
+                        [UIColor grayColor],
+                        [UIColor blueColor]];
     
     CGPoint center = self.view.center;
 
@@ -52,12 +61,17 @@ NSString *const kIdentifier = @"bootomBounday";
     
     for (int j = 0; j < colume; j++) {
         for (int i = 0; i < colors.count; i++) {
-            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, size.width, size.height)];
+            UIView *view = [[UIView alloc]
+                            initWithFrame:CGRectMake(0.0f, 0.0f,
+                                                     size.width,
+                                                     size.height)];
             view.center = center;
             view.backgroundColor = colors[i];
             center.y += size.height + 10.0f;
             
-            UIGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(undo:)];
+            UIGestureRecognizer *gesture = [[UITapGestureRecognizer alloc]
+                                            initWithTarget:self
+                                            action:@selector(undo:)];
             [view addGestureRecognizer:gesture];
             
             [squareFrames addObject:[NSValue valueWithCGRect:view.frame]];
@@ -70,26 +84,34 @@ NSString *const kIdentifier = @"bootomBounday";
         center.y = lastY;
     }
     
-    self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+    self.animator = [[UIDynamicAnimator alloc]
+                     initWithReferenceView:self.view];
 }
 
 -(void)start:(id)sender{
-    UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] initWithItems:self.squareViews];
+    UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc]
+                                          initWithItems:self.squareViews];
 //    gravityBehavior.angle = 130.0f;
 //    gravityBehavior.magnitude = 2.0f;
     gravityBehavior.gravityDirection = CGVectorMake(-10.0f, -5.0f);
     [self.animator addBehavior:gravityBehavior];
     
-    UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] initWithItems:self.squareViews];
+    UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc]
+                                              initWithItems:self.squareViews];
     collisionBehavior.translatesReferenceBoundsIntoBoundary = YES;
     //UICollisionBehaviorModeEverything
     collisionBehavior.collisionMode = UICollisionBehaviorModeBoundaries;
     collisionBehavior.collisionDelegate = self;
     
 //    [collisionBehavior addBoundaryWithIdentifier:kIdentifier fromPoint:CGPointMake(0.0f, self.view.bounds.size.height-100.0f) toPoint:CGPointMake(self.view.bounds.size.width, self.view.bounds.size.height-100.0f)];
-    [collisionBehavior addBoundaryWithIdentifier:kIdentifier fromPoint:CGPointMake(0.0f, 20.0f+self.navigationController.navigationBar.frame.size.height) toPoint:CGPointMake(self.view.bounds.size.width, 20.0f+self.navigationController.navigationBar.frame.size.height)];
+    CGRect navFrame = self.navigationController.navigationBar.frame;
+    [collisionBehavior addBoundaryWithIdentifier:kIdentifier
+                                       fromPoint:CGPointMake(0.0f,
+                                                             20.0f + navFrame.size.height)
+                                         toPoint:CGPointMake(self.view.bounds.size.width,
+                                                             20.0f + navFrame.size.height)];
 
-//    [collisionBehavior addBoundaryWithIdentifier:<#(id<NSCopying>)#> forPath:<#(UIBezierPath *)#>]
+//    [collisionBehavior addBoundaryWithIdentifier:(id<NSCopying>) forPath:<#(UIBezierPath *)#>]
     
     [self.animator addBehavior:collisionBehavior];
     
@@ -117,15 +139,23 @@ NSString *const kIdentifier = @"bootomBounday";
     barUndo.enabled = NO;
 }
 
-- (void)collisionBehavior:(UICollisionBehavior*)behavior beganContactForItem:(id <UIDynamicItem>)item1 withItem:(id <UIDynamicItem>)item2 atPoint:(CGPoint)p{
+- (void)collisionBehavior:(UICollisionBehavior*)behavior
+      beganContactForItem:(id <UIDynamicItem>)item1
+                 withItem:(id <UIDynamicItem>)item2
+                  atPoint:(CGPoint)p{
     NSLog(@"item1: %@, item2: %@, p(%f, %f)", item1, item2, p.x, p.y);
 }
-- (void)collisionBehavior:(UICollisionBehavior*)behavior endedContactForItem:(id <UIDynamicItem>)item1 withItem:(id <UIDynamicItem>)item2{
+- (void)collisionBehavior:(UICollisionBehavior*)behavior
+      endedContactForItem:(id <UIDynamicItem>)item1
+                 withItem:(id <UIDynamicItem>)item2{
     NSLog(@"item1: %@, item2: %@", item1, item2);
 }
 
 // The identifier of a boundary created with translatesReferenceBoundsIntoBoundary or setTranslatesReferenceBoundsIntoBoundaryWithInsets is nil
-- (void)collisionBehavior:(UICollisionBehavior*)behavior beganContactForItem:(id <UIDynamicItem>)item withBoundaryIdentifier:(id <NSCopying>)identifier atPoint:(CGPoint)p{
+- (void)collisionBehavior:(UICollisionBehavior*)behavior
+      beganContactForItem:(id <UIDynamicItem>)item
+   withBoundaryIdentifier:(id <NSCopying>)identifier
+                  atPoint:(CGPoint)p{
     NSLog(@"item: %@, identifier: %@, p(%f, %f)", item, identifier, p.x, p.y);
     
     if (!self.disapearSwitch.on) {
@@ -150,7 +180,9 @@ NSString *const kIdentifier = @"bootomBounday";
         }];
     }
 }
-- (void)collisionBehavior:(UICollisionBehavior*)behavior endedContactForItem:(id <UIDynamicItem>)item withBoundaryIdentifier:(id <NSCopying>)identifier{
+- (void)collisionBehavior:(UICollisionBehavior*)behavior
+      endedContactForItem:(id <UIDynamicItem>)item
+   withBoundaryIdentifier:(id <NSCopying>)identifier{
     NSLog(@"item: %@, identifier: %@", item, identifier);
 }
 

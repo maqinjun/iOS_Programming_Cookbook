@@ -70,7 +70,8 @@ static NSString *const kSectionFooter = @"kSectionFooter";
     
     UIPinchGestureRecognizer *gesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
     
-    for(UIGestureRecognizer *recoginer in self.collectionView.gestureRecognizers){
+    for(UIGestureRecognizer *recoginer
+        in self.collectionView.gestureRecognizers){
         if ([recoginer isKindOfClass:[gesture class]]) {
             [recoginer requireGestureRecognizerToFail:gesture];
         }
