@@ -11,6 +11,8 @@
 @implementation AssigningCharacteristicViewController
 
 -(void)viewDidLoad{
+    [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
     UIBarButtonItem *barStart = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(start:)];

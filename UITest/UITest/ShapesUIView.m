@@ -62,6 +62,8 @@
     
     CGContextAddPath(contextRef, path);
     
+    CGPathRelease(path);
+    
     [[UIColor blackColor] setFill];
     [[UIColor greenColor] setStroke];
     
@@ -69,7 +71,7 @@
     
     CGContextDrawPath(contextRef, kCGPathFillStroke);
     
-    CGContextRelease(contextRef);
+//    CGContextRelease(contextRef);
 }
 
 @end

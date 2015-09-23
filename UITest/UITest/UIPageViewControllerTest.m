@@ -28,6 +28,8 @@
     [pageViewR setPageDetail:@"Page Right"];
     pageViewR.index = 3;
     
+//    UIView *v;
+    
     NSArray *curPages = nil;
     
     if (self.spineLocation == UIPageViewControllerSpineLocationMid) {

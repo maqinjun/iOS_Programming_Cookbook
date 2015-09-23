@@ -10,6 +10,8 @@
 
 @implementation StyledTextTest
 -(void)viewDidLoad{
+    [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"Styled Texts";
     

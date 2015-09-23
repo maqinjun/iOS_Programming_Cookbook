@@ -24,6 +24,7 @@
 #import "CollectionViewController.h"
 
 #import "KeychainItemWrapper.h"
+#import "EventViewController.h"
 
 #import <AssetsLibrary/AssetsLibrary.h>
 
@@ -50,7 +51,8 @@ enum{
     kMultitasking,
     kCoreData,
     kGraphicsAndAnimations,
-    kCoreMotion
+    kCoreMotion,
+    kGestureAndEvent
 };
 
 enum{
@@ -114,6 +116,10 @@ enum{
     kAccelerometer = 0,
 };
 
+enum{
+    kGestureWithEvent = 0,
+};
+
 NSString *cellIdentifier = @"MainOPTalbeViewCell";
 
 @implementation MainOPTableViewController
@@ -124,6 +130,7 @@ NSString *cellIdentifier = @"MainOPTalbeViewCell";
 
 }
 -(void)viewDidLoad{
+    [super viewDidLoad];
     
     cellClicked = NO;
 
@@ -144,7 +151,8 @@ NSString *cellIdentifier = @"MainOPTalbeViewCell";
                                                          @"Multitasking",
                                                          @"CoreData",
                                                          @"Graphics and Animations",
-                                                         @"Core Motion"]];
+                                                         @"Core Motion",
+                                                         @"Gesture Recognizer and touch event."]];
     
     dataCell = [NSMutableArray arrayWithArray:@[[NSMutableArray arrayWithArray:@[@"UITextView", @"UIToolBar", @"UIScrollView", @"Styled Texts", @"UIPageViewController"]] ,
                                                 [NSMutableArray arrayWithArray:@[@"Adding Gravity to Your UI Components", @"Detecting and Reacting to Collisions Between UI Components", @"Animating with a Push", @"Multiple Dynamic Item to Each Other", @"Dynamic Snap Effect", @"Assigning Characteristics to Your Dynamic Effects"]],
@@ -158,7 +166,8 @@ NSString *cellIdentifier = @"MainOPTalbeViewCell";
                                                 [NSMutableArray arrayWithArray:@[@"Create And Saving"]],
                                                 [NSMutableArray arrayWithArray:@[@"Fonts Text Colors Images",
                                                                                  @"Drawing", @"Shapes"]],
-                                                [NSMutableArray arrayWithArray:@[@"Accelerometer"]]]];
+                                                [NSMutableArray arrayWithArray:@[@"Accelerometer"]],
+                                                [NSMutableArray arrayWithArray:@[@"GR and touch event"]]]];
     
     UIBarButtonItem *moveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRedo target:self action:@selector(moveCell02Cell2:)];
     self.navigationItem.rightBarButtonItem = moveButton;
@@ -686,6 +695,22 @@ NSString *cellIdentifier = @"MainOPTalbeViewCell";
     }
 }
 
+- (void)setctionGesutre:(NSInteger)row{
+    
+    UIViewController *vc  = nil;
+    switch (row) {
+        case kGestureWithEvent:
+            vc = [[EventViewController alloc] init];
+            break;
+        default:
+            break;
+    }
+    
+    if (vc != nil) {
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (cellClicked) {
@@ -731,6 +756,9 @@ NSString *cellIdentifier = @"MainOPTalbeViewCell";
             break;
         case kCoreMotion:
             [self sectionCoreMotion:indexPath.row];
+            break;
+        case kGestureAndEvent:
+            [self setctionGesutre:indexPath.row];
             break;
         default:
             break;

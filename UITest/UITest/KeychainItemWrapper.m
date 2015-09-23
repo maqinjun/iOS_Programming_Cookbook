@@ -193,7 +193,7 @@ Keychain API expects as a validly constructed container class.
 	OSStatus junk = noErr;
     if (!keychainItemData) 
     {
-        self.keychainItemData = [[NSMutableDictionary alloc] init];
+        self.keychainItemData = [[[NSMutableDictionary alloc] init] autorelease];
     }
     else if (keychainItemData)
     {
@@ -323,7 +323,7 @@ static const UUIDTool *tool;
 -(id)init{
     self = [super init];
     if (self) {
-        keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"kUUIDIdentifier" accessGroup:nil];
+        keychain = [[[KeychainItemWrapper alloc] initWithIdentifier:@"kUUIDIdentifier" accessGroup:nil] autorelease];
     }
     
     return self;

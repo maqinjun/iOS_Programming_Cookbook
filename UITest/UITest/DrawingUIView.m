@@ -201,6 +201,8 @@
     //下面再看一个颜色渐变的圆
     CGContextDrawRadialGradient(context, gradient, CGPointMake(300, 100), 0.0, CGPointMake(300, 100), 10, kCGGradientDrawsBeforeStartLocation);
     
+    CGGradientRelease(gradient);
+    
     /*画扇形和椭圆*/
     //画扇形，也就画圆，只不过是设置角度的大小，形成一个扇形
     aColor = [UIColor colorWithRed:0 green:1 blue:1 alpha:1];

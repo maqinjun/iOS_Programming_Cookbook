@@ -17,6 +17,12 @@
 @implementation AppDelegate
 
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    NSLog(@"%s \n %@", __FUNCTION__, [event allTouches]);
+    
+    [super touchesBegan:touches withEvent:event];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     

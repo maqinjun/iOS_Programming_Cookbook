@@ -59,6 +59,8 @@
 		C8E9662B1B37EA7A0042F818 /* MultipleDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E9662A1B37EA7A0042F818 /* MultipleDynamicViewController.m */; };
 		C8E9662E1B380B4A0042F818 /* DynamicSnapEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E9662D1B380B4A0042F818 /* DynamicSnapEffectViewController.m */; };
 		C8E966311B3812720042F818 /* AssigningCharacteristicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E966301B3812720042F818 /* AssigningCharacteristicViewController.m */; };
+		C8EEDED01BAD88CE00D43CE2 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EEDECF1BAD88CE00D43CE2 /* EventViewController.m */; };
+		C8EEDED31BAD88E100D43CE2 /* EventUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EEDED21BAD88E100D43CE2 /* EventUIView.m */; };
 		C8EF06C01B50EFDD00AC7A2A /* Multitasking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8EF06BF1B50EFDD00AC7A2A /* Multitasking.storyboard */; };
 		C8EF06C31B50F03200AC7A2A /* MultitaskingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF06C21B50F03200AC7A2A /* MultitaskingViewController.m */; };
 		C8EF06C61B516C7200AC7A2A /* NewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EF06C51B516C7200AC7A2A /* NewsItem.m */; };
@@ -191,6 +193,10 @@
 		C8E9662D1B380B4A0042F818 /* DynamicSnapEffectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicSnapEffectViewController.m; sourceTree = "<group>"; };
 		C8E9662F1B3812720042F818 /* AssigningCharacteristicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssigningCharacteristicViewController.h; sourceTree = "<group>"; };
 		C8E966301B3812720042F818 /* AssigningCharacteristicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssigningCharacteristicViewController.m; sourceTree = "<group>"; };
+		C8EEDECE1BAD88CE00D43CE2 /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
+		C8EEDECF1BAD88CE00D43CE2 /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
+		C8EEDED11BAD88E100D43CE2 /* EventUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventUIView.h; sourceTree = "<group>"; };
+		C8EEDED21BAD88E100D43CE2 /* EventUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventUIView.m; sourceTree = "<group>"; };
 		C8EF06BF1B50EFDD00AC7A2A /* Multitasking.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Multitasking.storyboard; sourceTree = "<group>"; };
 		C8EF06C11B50F03200AC7A2A /* MultitaskingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultitaskingViewController.h; sourceTree = "<group>"; };
 		C8EF06C21B50F03200AC7A2A /* MultitaskingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultitaskingViewController.m; sourceTree = "<group>"; };
@@ -381,6 +387,7 @@
 		C8D61AA01ADCBCAD0098F389 /* UITest */ = {
 			isa = PBXGroup;
 			children = (
+				C8EEDECD1BAD88AA00D43CE2 /* GesutreRecognizerAndEvent */,
 				C8D77D2D1B57B83D00155925 /* CoreMotion */,
 				C8BCA59F1B56BB7100B55110 /* GraphicsAndAnimations */,
 				C8D449F41B537C4800A23201 /* CoreData */,
@@ -503,6 +510,17 @@
 				C8E966301B3812720042F818 /* AssigningCharacteristicViewController.m */,
 			);
 			name = GravityAndInteractive;
+			sourceTree = "<group>";
+		};
+		C8EEDECD1BAD88AA00D43CE2 /* GesutreRecognizerAndEvent */ = {
+			isa = PBXGroup;
+			children = (
+				C8EEDECE1BAD88CE00D43CE2 /* EventViewController.h */,
+				C8EEDECF1BAD88CE00D43CE2 /* EventViewController.m */,
+				C8EEDED11BAD88E100D43CE2 /* EventUIView.h */,
+				C8EEDED21BAD88E100D43CE2 /* EventUIView.m */,
+			);
+			name = GesutreRecognizerAndEvent;
 			sourceTree = "<group>";
 		};
 		C8EF06BE1B50EFBC00AC7A2A /* Multitasking */ = {
@@ -684,6 +702,7 @@
 				C8F3CBFE1B55643D00048E79 /* Employee.m in Sources */,
 				C85748A91B8D8F6C00DDC0F6 /* TestTableViewCell.m in Sources */,
 				C8D61AAA1ADCBCAD0098F389 /* ViewController.m in Sources */,
+				C8EEDED01BAD88CE00D43CE2 /* EventViewController.m in Sources */,
 				C8EF07441B520BCC00AC7A2A /* Model.xcdatamodeld in Sources */,
 				C8D61AA71ADCBCAD0098F389 /* AppDelegate.m in Sources */,
 				C8D77D2C1B579E7600155925 /* ShapesUIView.m in Sources */,
@@ -701,6 +720,7 @@
 				C8D6F4981B575BB5005A223E /* DrawingUIView.m in Sources */,
 				C8E966251B37B16A0042F818 /* CollisionUIViewController.m in Sources */,
 				C8E965DE1B368FE10042F818 /* UIScrollViewTest.m in Sources */,
+				C8EEDED31BAD88E100D43CE2 /* EventUIView.m in Sources */,
 				C80F58D91B3C5CE600A89349 /* VisualFormatLanguageViewController.m in Sources */,
 				C86C7A861B4E7C0200810A58 /* CameraPhotoViewController.m in Sources */,
 				C80F58D61B3C558E00A89349 /* AutoLayoutViewController.m in Sources */,

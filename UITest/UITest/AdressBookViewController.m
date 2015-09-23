@@ -285,15 +285,24 @@
     
     for (int i = 0; i < contacts.count; i++) {
         ABRecordRef person = (__bridge ABRecordRef)([contacts objectAtIndex:i]);
-     
-        NSString *firstName = (__bridge NSString*) ABRecordCopyValue(person, kABPersonFirstNameProperty);
         
-        NSString *lastName = (__bridge NSString*) ABRecordCopyValue(person, kABPersonLastNameProperty);
+        CFTypeRef firstRef = ABRecordCopyValue(person, kABPersonFirstNameProperty);
+        CFTypeRef lastRef = ABRecordCopyValue(person, kABPersonLastNameProperty);
+        CFTypeRef middleRef = ABRecordCopyValue(person, kABPersonMiddleNameProperty);
+
+        NSString *firstName = [NSString stringWithString:(__bridge NSString*)firstRef];
         
-        NSString *middleName = (__bridge NSString*)ABRecordCopyValue(person, kABPersonMiddleNameProperty);
+        NSString *lastName = [NSString stringWithString:(__bridge NSString*)lastRef];
+        
+        
+        NSString *middleName = [NSString stringWithString:(__bridge NSString*) middleRef];
+        
         
         NSLog(@"%@ %@ %@", firstName, middleName, lastName);
-
+        
+        CFRelease(middleRef);
+        CFRelease(firstRef);
+        CFRelease(lastRef);
     }
 }
 
