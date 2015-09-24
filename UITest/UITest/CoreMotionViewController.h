@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CoreMotionViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIView *view1;
+@property (weak, nonatomic) IBOutlet UIView *view2;
 
 @end

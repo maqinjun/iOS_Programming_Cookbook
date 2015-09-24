@@ -26,6 +26,17 @@
     
     [self cmMotionManager];
     
+    NSLog(@"%s frame1: %@, bounds1: %@", __FUNCTION__, NSStringFromCGRect(self.view1.frame), NSStringFromCGRect(self.view1.bounds));
+    NSLog(@"%s frame2: %@, bounds2: %@", __FUNCTION__, NSStringFromCGRect(self.view2.frame), NSStringFromCGRect(self.view2.bounds));
+    
+    CGRect bounds =  self.view1.bounds;
+    bounds.origin.x = 40;
+    bounds.origin.y = 40;
+    self.view1.bounds = bounds;
+    
+    NSLog(@"%s frame1: %@, bounds1: %@", __FUNCTION__, NSStringFromCGRect(self.view1.frame), NSStringFromCGRect(self.view1.bounds));
+    NSLog(@"%s frame2: %@, bounds2: %@", __FUNCTION__, NSStringFromCGRect(self.view2.frame), NSStringFromCGRect(self.view2.bounds));
+
 }
 
 - (void)cmMotionManager{
