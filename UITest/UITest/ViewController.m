@@ -23,7 +23,8 @@
 {
     UIButton *downButton;
     UIView *subView;
-
+    
+    dispatch_block_t block;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,6 +45,54 @@
     
     [self testProgressView];
     
+    NSOperation *op;
+    [op cancel];
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        
+    }];
+   
+    [self test:^{
+        NSLog(@"test");
+    }];
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        self.mTextView.alpha = 0.5f;
+    }];
+    
+    block = ^{
+        self.mTextView.alpha = 0.8f;
+    };
+    
+//    [NSData dataWithContentsOfURL:<#(nonnull NSURL *)#> options:<#(NSDataReadingOptions)#> error:<#(NSError * _Nullable __autoreleasing * _Nullable)#>]
+    
+//    [subView addObserver:<#(nonnull NSObject *)#> forKeyPath:<#(nonnull NSString *)#> options:<#(NSKeyValueObservingOptions)#> context:<#(nullable void *)#>]
+    
+//    NSRunLoop *loop = [[NSRunLoop alloc] init];
+//    [loop runMode:<#(nonnull NSString *)#> beforeDate:<#(nonnull NSDate *)#>]
+    
+//    [NSThread detachNewThreadSelector:<#(nonnull SEL)#> toTarget:<#(nonnull id)#> withObject:<#(nullable id)#>]
+//    dispatch_async(dispatch_get_main_queue(), block);
+    
+//    [UIView animateWithDuration:(NSTimeInterval) animations:;]
+    
+}
+
+- (void)willChange:(NSKeyValueChange)changeKind valuesAtIndexes:(NSIndexSet *)indexes forKey:(NSString *)key{
+    
+}
+
+- (void)didChange:(NSKeyValueChange)changeKind valuesAtIndexes:(NSIndexSet *)indexes forKey:(NSString *)key{
+    
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
+    
+}
+
+- (void)test:(void(^)(void))block{
+ 
+    block();
 }
 
 -(void)testTextView{

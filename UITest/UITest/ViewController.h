@@ -17,6 +17,9 @@
 
 @property (nonatomic, weak) IBOutlet UITextField *testFeild;
 
+//@property (nonatomic, assign) UITableView *t;
+//@property (nonatomic, retain) int a;
+
 -(IBAction)download:(id)sender;
 
 -(IBAction)undo:(id)sender;
