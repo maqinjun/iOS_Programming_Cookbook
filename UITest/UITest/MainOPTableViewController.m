@@ -52,7 +52,7 @@ enum{
     kCoreData,
     kGraphicsAndAnimations,
     kCoreMotion,
-    kGestureAndEvent
+    kGestureAndEvent,
 };
 
 enum{
@@ -109,7 +109,8 @@ enum{
 enum{
     kFontsTextColorsImages = 0,
     kDrawing,
-    kShapes
+    kShapes,
+    kLayer
 };
 
 enum{
@@ -165,7 +166,7 @@ NSString *cellIdentifier = @"MainOPTalbeViewCell";
                                                 [NSMutableArray arrayWithArray:@[@"Multitasking Supported"]],
                                                 [NSMutableArray arrayWithArray:@[@"Create And Saving"]],
                                                 [NSMutableArray arrayWithArray:@[@"Fonts Text Colors Images",
-                                                                                 @"Drawing", @"Shapes"]],
+                                                                                 @"Drawing", @"Shapes", @"CALayer"]],
                                                 [NSMutableArray arrayWithArray:@[@"Accelerometer"]],
                                                 [NSMutableArray arrayWithArray:@[@"GR and touch event"]]]];
     
@@ -668,6 +669,9 @@ NSString *cellIdentifier = @"MainOPTalbeViewCell";
             
         case kShapes:
             vc = [storyboard instantiateViewControllerWithIdentifier:@"ShapesUIViewController"];
+            break;
+        case kLayer:
+            vc = [storyboard instantiateViewControllerWithIdentifier:@"CALayerTestViewController"];
             break;
         default:
             break;

@@ -79,6 +79,8 @@
 		C8F1201B1B41A14F005741ED /* HeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F1201A1B41A14F005741ED /* HeaderFooterView.m */; };
 		C8F3CBFE1B55643D00048E79 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F3CBFD1B55643D00048E79 /* Employee.m */; };
 		C8F3CC011B55643E00048E79 /* Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F3CC001B55643E00048E79 /* Manager.m */; };
+		E7AA50FB1BBAE4BC00DD138D /* CALayerTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AA50FA1BBAE4BC00DD138D /* CALayerTestViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E7AA50FE1BBAEED500DD138D /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = E7AA50FD1BBAEED500DD138D /* image1.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,6 +217,9 @@
 		C8F3CBFD1B55643D00048E79 /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
 		C8F3CBFF1B55643E00048E79 /* Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
 		C8F3CC001B55643E00048E79 /* Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Manager.m; sourceTree = "<group>"; };
+		E7AA50F91BBAE4BB00DD138D /* CALayerTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CALayerTestViewController.h; sourceTree = "<group>"; };
+		E7AA50FA1BBAE4BC00DD138D /* CALayerTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CALayerTestViewController.m; sourceTree = "<group>"; };
+		E7AA50FD1BBAEED500DD138D /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +264,7 @@
 		C82DD3DC1B900A2F00F2CF90 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				E7AA50FC1BBAEEBC00DD138D /* Images */,
 				C82DD3DD1B900B3600F2CF90 /* PreSoraka_v1.0_Beta0825.ipa */,
 				C8EF07331B51817400AC7A2A /* test.mp3 */,
 			);
@@ -338,6 +344,8 @@
 				C8D6F4971B575BB5005A223E /* DrawingUIView.m */,
 				C8D77D2A1B579E7600155925 /* ShapesUIView.h */,
 				C8D77D2B1B579E7600155925 /* ShapesUIView.m */,
+				E7AA50F91BBAE4BB00DD138D /* CALayerTestViewController.h */,
+				E7AA50FA1BBAE4BC00DD138D /* CALayerTestViewController.m */,
 			);
 			name = GraphicsAndAnimations;
 			sourceTree = "<group>";
@@ -565,6 +573,14 @@
 			name = CollectionViews;
 			sourceTree = "<group>";
 		};
+		E7AA50FC1BBAEEBC00DD138D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E7AA50FD1BBAEED500DD138D /* image1.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -676,6 +692,7 @@
 				C80F58DB1B3C6B6400A89349 /* test.storyboard in Resources */,
 				C8D61AAF1ADCBCAD0098F389 /* Images.xcassets in Resources */,
 				C874D1531B4D0A14007D325B /* maps.storyboard in Resources */,
+				E7AA50FE1BBAEED500DD138D /* image1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -693,6 +710,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7AA50FB1BBAE4BC00DD138D /* CALayerTestViewController.m in Sources */,
 				C8E965DA1B35BAE30042F818 /* MainOPTableViewController.m in Sources */,
 				C825CC351B554619007E4F13 /* TableViewCell.m in Sources */,
 				C8BCA5A41B56BC0000B55110 /* FTCIViewController.m in Sources */,
@@ -871,7 +889,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/UITest/UITest-Prefix.pch";
 				INFOPLIST_FILE = UITest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -892,7 +910,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/UITest/UITest-Prefix.pch";
 				INFOPLIST_FILE = UITest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

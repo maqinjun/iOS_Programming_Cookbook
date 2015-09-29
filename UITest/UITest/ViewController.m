@@ -75,7 +75,26 @@
 //    dispatch_async(dispatch_get_main_queue(), block);
     
 //    [UIView animateWithDuration:(NSTimeInterval) animations:;]
+    CALayer *layer = [[CALayer alloc] init];
+//    layer.
+    UIImageView *image;
+//    [image setImage:<#(UIImage * _Nullable)#>];
+//    [image setImage:];
+    UIButton *button;
+//    [button setImage:<#(nullable UIImage *)#> forState:<#(UIControlState)#>];
     
+//    self.view.layer
+    
+}
+
+- (void)dealloc{
+    NSLog(@"%s", __FUNCTION__);
+}
+
+- (void)loadView{
+    [super loadView];
+    
+    NSLog(@"%s", __FUNCTION__);
 }
 
 - (void)willChange:(NSKeyValueChange)changeKind valuesAtIndexes:(NSIndexSet *)indexes forKey:(NSString *)key{
