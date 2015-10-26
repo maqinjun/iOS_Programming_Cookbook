@@ -116,13 +116,33 @@
 
 -(void)testTextView{
     self.mTextView.backgroundColor = [UIColor grayColor];
-    self.mTextView.contentInset = UIEdgeInsetsMake(100, 0, 0, 0);
+//    self.mTextView.contentInset = UIEdgeInsetsMake(100, 0, 0, 0);
+    [_mTextView sizeToFit];
+    _mTextView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    UILabel *textViewTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, -100, 100, 30)];
-    textViewTitle.text = @"Just focking test.";
-    textViewTitle.textColor = [UIColor whiteColor];
-    textViewTitle.adjustsFontSizeToFitWidth = YES;
-    [self.mTextView addSubview:textViewTitle];
+    UITextView *autoSizeTextView = [[UITextView alloc] init];
+//    UILabel *autoSizeTextView =[[UILabel alloc] init];
+    autoSizeTextView.translatesAutoresizingMaskIntoConstraints = NO;
+    autoSizeTextView.backgroundColor = [UIColor lightGrayColor];
+//    autoSizeTextView.numberOfLines = 0;
+    autoSizeTextView.autoresizesSubviews = YES;
+    autoSizeTextView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+    [autoSizeTextView sizeToFit];
+//    autoSizeTextView.userInteractionEnabled = NO;
+    autoSizeTextView.text = @"testestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestestes";
+    
+    [self.view addSubview:autoSizeTextView];
+    
+    NSArray *constraintsH = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[autoSizeTextView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(autoSizeTextView)];
+    NSArray *constraintsV = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[_mTextView]-5-[autoSizeTextView]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_mTextView, autoSizeTextView)];
+    [NSLayoutConstraint activateConstraints:constraintsH];
+    [NSLayoutConstraint activateConstraints:constraintsV];
+//
+//    UILabel *textViewTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, -100, 100, 30)];
+//    textViewTitle.text = @"Just focking test.";
+//    textViewTitle.textColor = [UIColor whiteColor];
+//    textViewTitle.adjustsFontSizeToFitWidth = YES;
+//    [self.mTextView addSubview:textViewTitle];
 }
 
 -(void)testProgressView{
