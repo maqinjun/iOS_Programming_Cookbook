@@ -8,6 +8,7 @@
 
 #import "CALayerTestViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "KCView.h"
 
 #define WIDTH (50)
 #define PHOTO_HEIGHT (150)
@@ -23,12 +24,30 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self drawCustomView];
+
     [self drawImage];
     
     [self drawMyLayer];
 
 }
 
+- (void)drawCustomView{
+    KCView *view = [[KCView alloc] initWithFrame:CGRectMake(100, 250, 100, 100)];
+//    view.backgroundColor = [UIColor colorWithRed:249.0/255.0 green:249.0/255.0 blue:249.0/255.0 alpha:1];
+    view.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:view];
+}
+/*
+    分别使用三种方式绘制图片：
+    1、CGContextDrawImage，使用transform解决图像倒立问题。
+    2、CGContextDrawImage，使用CGContextSaveGState(ctx);
+                              CGContextScaleCTM(ctx, 1, -1);
+                              CGContextTranslateCTM(ctx, 0, -PHOTO_HEIGHT);
+                              CGContextRestoreGState(ctx);解决图像倒立问题。
+    3、直接使用[layer setContents:]。
+
+ */
 - (void)drawImage{
     
     CGPoint position = CGPointMake(200, 200);
@@ -59,27 +78,36 @@
     layer.borderColor = [UIColor whiteColor].CGColor;
     layer.borderWidth = borderWidth;
     
+    //3. 直接使用[layer setContents:]
+    //UIImage *image = [UIImage imageNamed:@"image1.png"];
+    //[layer setContents:(id)image.CGImage];
+    
+    //1. 利用图层形变解决图像倒立问题
+    layer.transform = CATransform3DMakeRotation(M_PI, 1, 0, 0);
+    [layer setValue:@M_PI forKeyPath:@"transform.rotation.x"];
+    
     layer.delegate = self;
     
     [self.view.layer addSublayer:layer];
     
-    // 调用此函数，否则代理方法不会触发
+    //1/2. 调用此函数，否则代理方法不会触发
     [layer setNeedsDisplay];
 }
 
 #pragma mark 绘制图形、图像到图层，注意参数中的ctx是图层的图形上下文，其中绘制位置也是相对图层而言
 - (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx{
-    CGContextSaveGState(ctx);
     
-    //图形上下文形变，解决图片倒立的问题
-    CGContextScaleCTM(ctx, 1, -1);
-    CGContextTranslateCTM(ctx, 0, -PHOTO_HEIGHT);
+    //2. 图形上下文形变，解决图片倒立的问题
+    //    CGContextSaveGState(ctx);
+    //    CGContextScaleCTM(ctx, 1, -1);
+    //    CGContextTranslateCTM(ctx, 0, -PHOTO_HEIGHT);
     
     UIImage *image = [UIImage imageNamed:@"image1.png"];
     
     CGContextDrawImage(ctx, CGRectMake(0, 0, PHOTO_HEIGHT, PHOTO_HEIGHT), image.CGImage);
     
-    CGContextRestoreGState(ctx);
+    //2.图形上下文形变，解决图片倒立的问题
+    //    CGContextRestoreGState(ctx);
 }
 
 #pragma  mark 绘制图层
@@ -98,10 +126,13 @@
     [self.view.layer addSublayer:layer];
 }
 
+//Xcode帮助文档中 CATransform3D Key Path
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     UITouch *touch = [touches anyObject];
     
-    CALayer *layer = [self.view.layer.sublayers lastObject];
+    NSArray *sublayers = self.view.layer.sublayers;
+    
+    CALayer *layer = [sublayers lastObject];
     CGFloat width = layer.bounds.size.width;
     
     if (width == WIDTH) {
@@ -113,6 +144,18 @@
     layer.bounds = CGRectMake(0, 0, width, width);
     layer.position = [touch locationInView:self.view];
     layer.cornerRadius = width/2;
+    
+    CALayer *imageLayer = [sublayers objectAtIndex:sublayers.count-2];
+    
+    NSNumber *x = [imageLayer valueForKeyPath:@"transform.rotation.x"];
+    
+    if ([x  isEqual: @M_PI]) {
+        x = @M_PI_4;
+    }else{
+        x = @M_PI;
+    }
+    
+    [imageLayer setValue:x forKeyPath:@"transform.rotation.x"];
 }
 
 
