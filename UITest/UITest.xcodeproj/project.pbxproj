@@ -78,10 +78,12 @@
 		C8F1201B1B41A14F005741ED /* HeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F1201A1B41A14F005741ED /* HeaderFooterView.m */; };
 		C8F3CBFE1B55643D00048E79 /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F3CBFD1B55643D00048E79 /* Employee.m */; };
 		C8F3CC011B55643E00048E79 /* Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F3CC001B55643E00048E79 /* Manager.m */; };
-		E7AA50FB1BBAE4BC00DD138D /* CALayerTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AA50FA1BBAE4BC00DD138D /* CALayerTestViewController.m */; };
-		E7AA50FE1BBAEED500DD138D /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = E7AA50FD1BBAEED500DD138D /* image1.png */; };
-		E7F733631BDE188700D4DD9D /* UITextViewAutoResize.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F733621BDE188700D4DD9D /* UITextViewAutoResize.m */; };
-		E7F733671BDE29FA00D4DD9D /* UIImageViewEdit.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F733661BDE29FA00D4DD9D /* UIImageViewEdit.m */; };
+		E713ED141BBCCA4100F4DAD7 /* KCLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E713ED131BBCCA4100F4DAD7 /* KCLayer.m */; settings = {ASSET_TAGS = (); }; };
+		E713ED171BBCCBC900F4DAD7 /* KCView.m in Sources */ = {isa = PBXBuildFile; fileRef = E713ED161BBCCBC900F4DAD7 /* KCView.m */; settings = {ASSET_TAGS = (); }; };
+		E7AA50FB1BBAE4BC00DD138D /* CALayerTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AA50FA1BBAE4BC00DD138D /* CALayerTestViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E7AA50FE1BBAEED500DD138D /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = E7AA50FD1BBAEED500DD138D /* image1.png */; settings = {ASSET_TAGS = (); }; };
+		E7F733631BDE188700D4DD9D /* UITextViewAutoResize.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F733621BDE188700D4DD9D /* UITextViewAutoResize.m */; settings = {ASSET_TAGS = (); }; };
+		E7F733671BDE29FA00D4DD9D /* UIImageViewEdit.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F733661BDE29FA00D4DD9D /* UIImageViewEdit.m */; settings = {ASSET_TAGS = (); }; };
 		F6A3F8D3E1E53CFC0239BB10 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D4E0904A6799D70C9C1C20 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -220,6 +222,10 @@
 		C8F3CBFD1B55643D00048E79 /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
 		C8F3CBFF1B55643E00048E79 /* Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
 		C8F3CC001B55643E00048E79 /* Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Manager.m; sourceTree = "<group>"; };
+		E713ED121BBCCA4100F4DAD7 /* KCLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCLayer.h; sourceTree = "<group>"; };
+		E713ED131BBCCA4100F4DAD7 /* KCLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCLayer.m; sourceTree = "<group>"; };
+		E713ED151BBCCBC900F4DAD7 /* KCView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCView.h; sourceTree = "<group>"; };
+		E713ED161BBCCBC900F4DAD7 /* KCView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCView.m; sourceTree = "<group>"; };
 		E7AA50F91BBAE4BB00DD138D /* CALayerTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CALayerTestViewController.h; sourceTree = "<group>"; };
 		E7AA50FA1BBAE4BC00DD138D /* CALayerTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CALayerTestViewController.m; sourceTree = "<group>"; };
 		E7AA50FD1BBAEED500DD138D /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
@@ -364,6 +370,10 @@
 				C8D77D2B1B579E7600155925 /* ShapesUIView.m */,
 				E7AA50F91BBAE4BB00DD138D /* CALayerTestViewController.h */,
 				E7AA50FA1BBAE4BC00DD138D /* CALayerTestViewController.m */,
+				E713ED121BBCCA4100F4DAD7 /* KCLayer.h */,
+				E713ED131BBCCA4100F4DAD7 /* KCLayer.m */,
+				E713ED151BBCCBC900F4DAD7 /* KCView.h */,
+				E713ED161BBCCBC900F4DAD7 /* KCView.m */,
 			);
 			name = GraphicsAndAnimations;
 			sourceTree = "<group>";
@@ -803,6 +813,7 @@
 				C873AC2D1B4D1B7F00EB9254 /* MyAnnotation.m in Sources */,
 				C8D6F4981B575BB5005A223E /* DrawingUIView.m in Sources */,
 				C8E966251B37B16A0042F818 /* CollisionUIViewController.m in Sources */,
+				E713ED141BBCCA4100F4DAD7 /* KCLayer.m in Sources */,
 				C8E965DE1B368FE10042F818 /* UIScrollViewTest.m in Sources */,
 				C8EEDED31BAD88E100D43CE2 /* EventUIView.m in Sources */,
 				C80F58D91B3C5CE600A89349 /* VisualFormatLanguageViewController.m in Sources */,
@@ -814,6 +825,7 @@
 				C8BCA5A71B56BEE600B55110 /* FTCIView.m in Sources */,
 				E7F733671BDE29FA00D4DD9D /* UIImageViewEdit.m in Sources */,
 				C8E966281B37D79E0042F818 /* PushBehaviorUIViewController.m in Sources */,
+				E713ED171BBCCBC900F4DAD7 /* KCView.m in Sources */,
 				C8E9661B1B3742E80042F818 /* UIPageViewControllerTest.m in Sources */,
 				C86C7A691B4E2A8B00810A58 /* AdressBookViewController.m in Sources */,
 				C8E9662E1B380B4A0042F818 /* DynamicSnapEffectViewController.m in Sources */,
