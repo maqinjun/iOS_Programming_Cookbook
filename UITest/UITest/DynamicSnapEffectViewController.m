@@ -12,16 +12,17 @@
 -(void)viewDidLoad{
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self createGestureRecognizer];
     [self createSqureView];
     [self createAnimatorAndBehavior];
+    [self createGestureRecognizer];
 }
 
 -(void)createGestureRecognizer{
     
 //    UIGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     UIGestureRecognizer *gestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-    [self.view addGestureRecognizer:gestureRecognizer];
+    self.squareView.userInteractionEnabled = YES;
+    [self.squareView addGestureRecognizer:gestureRecognizer];
 }
 
 -(void)handleTap:(UITapGestureRecognizer*)tapGesture{

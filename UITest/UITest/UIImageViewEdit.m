@@ -108,28 +108,28 @@ imageUrl;
         [self addSubview:_textfield];
         [self addSubview:_deleteButton];
         
-        __weak typeof (self) weakSelf = self;
-        
-        [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(weakSelf.mas_top);
-            make.left.equalTo(weakSelf.mas_left);
-            make.right.equalTo(weakSelf.mas_right);
-            make.bottom.equalTo(_textfield.mas_top);
-        }];
-        
-        [_textfield mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(_imageView.mas_bottom).offset(@(textfieldToImageInterver));
-            make.bottom.equalTo(weakSelf.mas_bottom);
-            make.left.equalTo(weakSelf.mas_left);
-            make.right.equalTo(weakSelf.mas_right);
-            make.height.equalTo(@(textfieldH));
-        }];
-        
-        [_deleteButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(weakSelf.mas_top);
-            make.right.equalTo(weakSelf.mas_right);
-            make.size.equalTo(deleteImage.size);
-        }];
+//        __weak typeof (self) weakSelf = self;
+//        
+//        [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.top.equalTo(weakSelf.mas_top);
+//            make.left.equalTo(weakSelf.mas_left);
+//            make.right.equalTo(weakSelf.mas_right);
+//            make.bottom.equalTo(_textfield.mas_top);
+//        }];
+//        
+//        [_textfield mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.top.equalTo(_imageView.mas_bottom).offset(@(textfieldToImageInterver));
+//            make.bottom.equalTo(weakSelf.mas_bottom);
+//            make.left.equalTo(weakSelf.mas_left);
+//            make.right.equalTo(weakSelf.mas_right);
+//            make.height.equalTo(@(textfieldH));
+//        }];
+//        
+//        [_deleteButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.top.equalTo(weakSelf.mas_top);
+//            make.right.equalTo(weakSelf.mas_right);
+//            make.size.equalTo(deleteImage.size);
+//        }];
     }
     return self;
 }
