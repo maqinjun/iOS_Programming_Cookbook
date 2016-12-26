@@ -1,6 +1,0 @@
-framework module MDMSDK {
-  umbrella header "MDMSDK.h"
-
-  export *
-  module * { export * }
-}
